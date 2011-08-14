@@ -33,8 +33,8 @@ class EstimatorShell(cmd.Cmd):
 			completion_mean = (self.final - self.current)/rate_mean
 			completion_inst = (self.final - self.current)/rates[-1]
 			print()
-			print('Completion time based on mean rate (%0.2f n/s): %s' % (rate_mean,wordtime(completion_mean)))
-			print('Completion time based on recent rate (%0.2f n/s): %s' % (rates[-1],wordtime(completion_inst)))
+			print('Completion time based on mean rate (%0.2f s/n): %s' % (1.0/rate_mean,wordtime(completion_mean)))
+			print('Completion time based on recent rate (%0.2f s/n): %s' % (1.0/rates[-1],wordtime(completion_inst)))
 			print()
 	def do_update(self, arg):
 		'Updates the current state: current 50'
